@@ -152,8 +152,10 @@ class _HeadRegistrationScreenState extends State<HeadRegistrationScreen> {
                       return null;
                     }, hintText: "example@gmail.com"),
                     //Kept empty validator as this field is not required/compulsory
-                    registrationTextField("Landline Number", landlineController, hintText: "e.g., 079-12345678",
-                        validator: (value) {
+                    registrationTextField("Landline Number", landlineController,
+                        hintText: "e.g., 079-12345678",
+                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                        type: TextInputType.phone, validator: (value) {
                       return null;
                     }, maxLength: 10),
                     //Keeping this value optional so no validator
